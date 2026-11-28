@@ -20,6 +20,8 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
 
+        options.addArguments("headless");
+
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
         loginPage = new LoginPage(driver);

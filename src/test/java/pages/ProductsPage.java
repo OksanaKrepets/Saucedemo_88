@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class ProductsPage {
     private final By title = By.cssSelector("[data-test='title']");
-
     WebDriver driver;
 
     public ProductsPage(WebDriver driver) {
@@ -18,5 +17,9 @@ public class ProductsPage {
 
     public String getTitleText() {
         return driver.findElement(title).getText();
+    }
+
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
     }
 }

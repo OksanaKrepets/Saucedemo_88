@@ -42,8 +42,8 @@ public class LoginTest extends BaseTest {
     public void correctLogin() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
-        String currentUrl = driver.getCurrentUrl();
-        assertTrue(currentUrl.contains("inventory.html"));
+        assertEquals(productsPage.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
+        assertTrue(productsPage.getCurrentUrl().contains("inventory.html"));
         assertTrue(productsPage.pageTitleVisible());
         assertEquals(productsPage.getTitleText(), "Products");
     }
